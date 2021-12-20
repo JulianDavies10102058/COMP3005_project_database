@@ -301,6 +301,8 @@ public class project_bookstore {
                                 stmt.executeUpdate(
                                         "insert into book_order values " +
                                                 "("+new_id+","+cart.get(i)+")");
+                                stmt.executeUpdate(
+                                        "update book set stock = stock-1 where isbn = "+cart.get(i));
                             }
                             cart = new ArrayList<>();
                             System.out.println("Your order has been placed!");
